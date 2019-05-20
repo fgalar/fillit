@@ -87,4 +87,8 @@ void				ft_print_tab_int(int *tab, int size);
 int					*ft_sort_integer(int *tab, int size);
 int					ft_power(int nb, int power);
 
+/*  
+ *  DEFINITION DE FONCTIONS SUPPLEMENTAIRES
+ */
+ int				ft(size_t i, size_t div);
 #endif
