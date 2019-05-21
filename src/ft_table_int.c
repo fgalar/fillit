@@ -6,9 +6,32 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:38:26 by mdavid            #+#    #+#             */
-/*   Updated: 2019/05/21 14:33:26 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/05/21 17:17:58 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft/libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+void    ft_table_int_init(int ***table)
+{
+    int     k;
+    int     l;
+
+    k = 0;
+    while (k <= 4)
+    {
+        l = 0;
+        while (l <= 4)
+        {
+            *table[k][l] = 0;
+            printf("ici\n");
+            l++;
+        }
+        k++;
+    }
+}
 
 /* FONCTION : FT_TABLE_INT
  * PARAMETRE(S) : nb_l (nb de lignes) , nb_c (nb de colonnes).
@@ -27,20 +50,19 @@ int     **ft_table_int(int nb_l, int nb_c)
     int     i;
     
     i = 0;
-    if (!(table = (int**)ft_memalloc(sizeof(int*) * nb_l)))
-        return (-1);
+    if (!(table = (int**)malloc(sizeof(int*) * nb_l)))
+        return (NULL);
     while (i <= nb_l)
     {
-        if (!(table[i] = (int*)ft_memalloc(sizeof(int) * nb_c)))
+        if (!(table[i] = (int*)malloc(sizeof(int) * nb_c)))
         {
-            while (i >= 0)
-            {
+            while (--i >= 0)
                 free (table[i]);
-                free (table);
-            }
-            return (-1);
+            free (table);
+            return (NULL);
         }
         i++;
     }
-    return (table)
+    ft_table_int_init(&table);
+    return (table);
 }
