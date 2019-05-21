@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:50:34 by fgarault          #+#    #+#             */
-/*   Updated: 2019/05/21 12:17:58 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/05/21 14:33:23 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int    check_tetramino(char **buffer)
 {
     int     **table_voisin;
 
-
+    table_voisin = ft_table_int(4, 4);
 }
 
 /* FONCTION : CHECK
