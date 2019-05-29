@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 18:37:00 by mdavid            #+#    #+#             */
-/*   Updated: 2019/05/23 11:46:49 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/05/29 12:43:27 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,13 @@ int     ft_check(int *fd)
         return (-1);
     while (ret != 0 && nb_tetramino < 26)
     {
-        printf("ici ft_check 1\n");
         if ((ret = read(*fd, buffer, 19)) != 19)
-        {
-            printf("ici ft_check 2-- ret = %d\n", ret);
             return (-1);
-        }
-        printf("ici ft_check 3\n");
         buffer[20] = '\0';
-        printf("ici ft_check 4\n");
         if (ft_check_form(buffer) == 1)
-        {
-            printf("ici ft_check 5-- if test_form\n");
             return (1);
-        }
-        printf("ici ft_check 5\n");
         if (ft_check_tetramino(&buffer) == 1)
             return (1);
-        printf("ici ft_check 6\n");
         if ((ret = read(*fd, buf_n, 1)) == 1)
             if (buf_n[0] != '\n')
                 return (1);
