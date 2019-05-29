@@ -6,27 +6,33 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:38:26 by mdavid            #+#    #+#             */
-/*   Updated: 2019/05/21 17:17:58 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/05/22 14:14:32 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
-void    ft_table_int_init(int ***table)
+/* FONCTION : FT_TABLE_INT_INIT.
+ * PARAMETRES : table (tableau de int), nb_l (nb line de table), nb_c (nb column de table).
+ * DESCRIPTION :
+ *     initialise l'ensemble des éléments de table à 0.
+ * RETOUR :
+ *     rien.
+ */
+
+void    ft_table_int_init(int **table, int nb_l, int nb_c)
 {
     int     k;
     int     l;
 
     k = 0;
-    while (k <= 4)
+    while (k < nb_l)
     {
         l = 0;
-        while (l <= 4)
+        while (l < nb_c)
         {
-            *table[k][l] = 0;
-            printf("ici\n");
+            table[k][l] = 0;
             l++;
         }
         k++;
@@ -52,7 +58,7 @@ int     **ft_table_int(int nb_l, int nb_c)
     i = 0;
     if (!(table = (int**)malloc(sizeof(int*) * nb_l)))
         return (NULL);
-    while (i <= nb_l)
+    while (i < nb_l)
     {
         if (!(table[i] = (int*)malloc(sizeof(int) * nb_c)))
         {
@@ -63,6 +69,6 @@ int     **ft_table_int(int nb_l, int nb_c)
         }
         i++;
     }
-    ft_table_int_init(&table);
+    ft_table_int_init(table, nb_l, nb_c);
     return (table);
 }
