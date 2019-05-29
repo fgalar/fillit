@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:50:34 by fgarault          #+#    #+#             */
-/*   Updated: 2019/05/22 21:36:29 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/05/29 12:28:40 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,31 @@
  *    1 -> le buffer reçu n'a pas la forme d'un potentiel tetramino.
  *    0 -> le buffer reçu a la forme d'un potentiel tetramino.
  */
-int    ft_check_form(char *buffer)
-{
-    int         i;
 
-    i = 0;
-    while (buffer[i])
-        i++;
-    return (0);
+int    check_form(char *buffer)
+{
+	int         i;
+	int         error;
+	int			mod;
+
+	i = 0;
+	error = 0;
+	mod = 0;
+	while (buffer[i] && i < 20 && error == 0)
+	{
+		if ((i == 0) || ((mod = (i + 1) % 5) > 0))
+		{
+			if (buffer[i] == '.' || buffer[i] == '#')
+				i++;
+			else
+				error = 1;
+		}
+		else if (buffer[i] == '\n' && ((mod = (i + 1) % 5) == 0))
+			i++;
+		else
+			error = 1;
+	}
+	if (buffer[20] != '\n' && buffer[20] != '\0')
+		error = 1;
+	return (error);
 }
