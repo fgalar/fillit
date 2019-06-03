@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/01 00:06:41 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/03 07:02:40 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,58 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "../libft/libft.h"
+#include "../include/fillit.h"
 
+void	ft_set_point(char *buffer, t_tetri *new_element)
+{
+	int		i;
+	int		y_p;
+	int		x_p;
+	int		n;
 
-t_list	*ft_lstadd(char	*buffer, t_tetri *element, char c)
+	i = 0;
+	y_p = 0;
+	x_p = 0;
+	n = 0;
+	while (buffer[i])
+	{
+		if (buffer[i] == '#')
+		{
+			if (n == 0)
+			{
+				y_p = (i + 1) / 5;
+				x_p = (i + 1) % 5;
+			}
+			new_element->point[n].y = ((i + 1) / 5) - y_p;
+			new_element->point[n++].x = ((i + 1) % 5) - x_p;
+		}
+		i++;
+	}
+}
+
+t_tetri	*lstadd(char	*buffer, t_tetri *element, char c)
 {
 	t_tetri *start;
 	t_tetri *new_element;
 
-	if (!(element = (t_tetri*)malloc(sizeof(t_tetri))))
-		return (-1);
+	if (!(new_element = (t_tetri*)malloc(sizeof(t_tetri))))
+		return (NULL);
 	start = element;
 	if (element)
 	{
-		while (element != NULL)
+		while (element->next != NULL)
 			element = element->next;
 		element->next = new_element;
 	}
 	new_element->c = c;
 	ft_set_point(buffer, new_element);
 	new_element->next = NULL;
-	if (element == NULL)
+	if (element == NULL)                                                    
 		return (new_element);
 	return (start);
 }
 
-int		ft_parsing(int ac, char **av)
+int		main(int ac, char **av)
 {
 	int		fd;
 	int		ret;
@@ -57,9 +84,22 @@ int		ft_parsing(int ac, char **av)
 	while ((ret = read(fd, buffer, 21)) > 0)
 	{
 		buffer[ret] = '\0';
-		if ((lst_tetri = ft_lstadd(buffer, lst_tetri, c)) == -1)
+		if ((lst_tetri = lstadd(buffer, lst_tetri, c)) == NULL)
 			return (-1);
 		c++;
-	}	
+	}
+	int i = 0;
+	while (lst_tetri->next != NULL) {
+		i=0;
+		while(i < 4) {
+			ft_putnbr(lst_tetri->point[i].x);
+			ft_putchar('|');
+			ft_putnbr(lst_tetri->point[i].y);
+			ft_putchar('\n');
+			i++;
+		}
+			ft_putchar('\n');
+		lst_tetri = lst_tetri->next;
+	}
 	return (0);
 }
