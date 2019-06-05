@@ -6,7 +6,7 @@
 /*   By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:42:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/03 06:40:56 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/05 05:41:34 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ typedef struct      s_tetri
 	struct s_tetri  *next;
 }					t_tetri;
 
+typedef struct		s_mappy
+{
+	char			map[26][26];
+} 					t_mappy;
+
 int     ft_check(int *fd);
 int    	check_form(char *buffer);
 int     ft_check_nb_blocs(char *buffer);
@@ -35,5 +40,7 @@ int     **ft_table_int(int nb_l, int nb_c);
 int     ft_blocs_updown(char *buffer, int i);
 int     ft_blocs_leftright(char *buffer, int i);
 int     ft_table_neighbours(int **table, char *buffer);
+void	ft_set_point(char *buffer, t_tetri *new_element);
+t_tetri	*lstadd(char *buffer, t_tetri *element, char c);
 
 #endif
