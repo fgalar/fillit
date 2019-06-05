@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/03 07:02:40 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/05 01:30:57 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_set_point(char *buffer, t_tetri *new_element)
 	}
 }
 
-t_tetri	*lstadd(char	*buffer, t_tetri *element, char c)
+t_tetri	*lstadd(char *buffer, t_tetri *element, char c)
 {
 	t_tetri *start;
 	t_tetri *new_element;
@@ -88,7 +88,9 @@ int		main(int ac, char **av)
 			return (-1);
 		c++;
 	}
-	int i = 0;
+	ft_map(lst_tetri);
+	
+	/*int i = 0;
 	while (lst_tetri->next != NULL) {
 		i=0;
 		while(i < 4) {
@@ -100,6 +102,17 @@ int		main(int ac, char **av)
 		}
 			ft_putchar('\n');
 		lst_tetri = lst_tetri->next;
+	}*/
+	char	**tab;
+	int		i;
+
+	i = 0;
+	if (!(tab = ft_tab(lst_tetri, c)))
+		return (NULL);
+	while (tab[i])
+	{
+		ft_putstr(tab[i]);
+		i++;
 	}
 	return (0);
 }
