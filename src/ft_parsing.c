@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/06 04:20:27 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/06 05:50:20 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int		ft_parsing(char **av)
 	//ft_map(lst_tetri);
 	
 	int i = 0;
-	while (lst_tetri->next != NULL) {
+	while (lst_tetri != NULL) {
 		i=0;
 		while(i < 4) {
 			ft_putnbr(lst_tetri->point[i].x);
@@ -112,5 +112,5 @@ int		ft_parsing(char **av)
 		ft_putstr(tab[i]);
 		i++;
 	}*/
-	return (ft_sqroot(c));
+	return (ft_sqroot(c) * 4);
 }
