@@ -6,7 +6,7 @@
 /*   By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:42:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/05 05:41:34 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/06 04:15:16 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int     ft_blocs_leftright(char *buffer, int i);
 int     ft_table_neighbours(int **table, char *buffer);
 void	ft_set_point(char *buffer, t_tetri *new_element);
 t_tetri	*lstadd(char *buffer, t_tetri *element, char c);
-
+int		ft_parsing(char **av);
+int		ft_sqroot(char c);
 #endif

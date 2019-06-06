@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/05 01:30:57 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/06 04:20:27 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_tetri	*lstadd(char *buffer, t_tetri *element, char c)
 	return (start);
 }
 
-int		main(int ac, char **av)
+int		ft_parsing(char **av)
 {
 	int		fd;
 	int		ret;
@@ -79,8 +79,6 @@ int		main(int ac, char **av)
 	ret = 0;
 	lst_tetri = NULL;
 	c = 'A';
-	if (ac != 2)
-		return (0);
 	while ((ret = read(fd, buffer, 21)) > 0)
 	{
 		buffer[ret] = '\0';
@@ -88,9 +86,9 @@ int		main(int ac, char **av)
 			return (-1);
 		c++;
 	}
-	ft_map(lst_tetri);
+	//ft_map(lst_tetri);
 	
-	/*int i = 0;
+	int i = 0;
 	while (lst_tetri->next != NULL) {
 		i=0;
 		while(i < 4) {
@@ -102,8 +100,8 @@ int		main(int ac, char **av)
 		}
 			ft_putchar('\n');
 		lst_tetri = lst_tetri->next;
-	}*/
-	char	**tab;
+	}
+/*	char	**tab;
 	int		i;
 
 	i = 0;
@@ -113,6 +111,6 @@ int		main(int ac, char **av)
 	{
 		ft_putstr(tab[i]);
 		i++;
-	}
-	return (0);
+	}*/
+	return (ft_sqroot(c));
 }
