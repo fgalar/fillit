@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../libft/libft.h"
+#include "../include/fillit.h"
 
 int		map_min(char c)
 {
@@ -27,19 +28,36 @@ int		map_min(char c)
 	return (i);	
 }
 
-char	**init_map(t_mappy *map, char c)
+t_mappy	*init_map(t_mappy *map, char c)
 {
 	int		i;
 	int		j;
 
 	j = 0;
 	map->size = map_min(c);
-	while (j < map_size)
+	while (j < map->size)
 	{
 		i = 0;
 		while (i < map->size)
-			map[j][i++] = '.';
+			map->map[j][i++] = '.';
 		j++;
 	}
-	return (map->size);
+	return (map->map);
+}
+
+int	main(void)
+{
+	t_mappy	*map;
+	int	y;
+	int     max;
+
+	y = 0;
+	max = map_min('E');
+	map = init_map(map, 'E');
+	while (y < max)
+	{
+		ft_putstr(*map[y]);
+		y++;
+	}
+	return (0);
 }
