@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.c                                            :+:      :+:    :+:   */
+/*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 03:54:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/06 05:42:48 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/08 22:33:50 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../libft/libft.h"
 
-int		ft_sqroot(char c)
+int		map_min(char c)
 {
 	int		i;
 	int		nb_piece;
@@ -25,4 +25,21 @@ int		ft_sqroot(char c)
 		ft_putchar('\n');
 	}
 	return (i);	
+}
+
+char	**init_map(t_mappy *map, char c)
+{
+	int		i;
+	int		j;
+
+	j = 0;
+	map->size = map_min(c);
+	while (j < map_size)
+	{
+		i = 0;
+		while (i < map->size)
+			map[j][i++] = '.';
+		j++;
+	}
+	return (map->size);
 }

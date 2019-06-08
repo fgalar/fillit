@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 00:46:40 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/06 01:44:42 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/08 22:30:44 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,21 @@
 #include "../include/fillit.h"
 #include "../libft/libft.h"
 
-
-
-void	display(char	map[26][26])
+void	can_put(t_tetri *piece, t_mappy *map, int i, int j)
 {
-	int		y;
+	int		place;
 
-	y = 0;
-	while (y < 26)
+	place = 0;
+	while (i < 4)
 	{
-		ft_memset(map[y], '.', 25);
-		map[y][25] = '\0';
-		ft_putstr(map[y]);
-		ft_putchar('\n');
-		y++;
+		if (map[j + piece->point[place].y][i + piece->point[place].x] != '.')
+			return (1);
+
 	}
 }
 
-void	put_tetri(t_tetri *element, char map[26][26])
+void ft_princ()
 {
-		int		y;
-		int		x;
-		
-		y = 0;
-		while (map[y])
-		{
-			x = 0;
-			while (map[y][x] == '.')
-				map[
-			y++;
-		}
-}
-
-
-
-int main()
-{
-	char	map[26][26];
-	int		i;
 	
-	i = 0;
-	display(map);
-	return (0);
 }
 
