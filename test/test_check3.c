@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:08:46 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/10 12:01:32 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/10 12:22:53 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int     main(void)
     int         i = 1;
 
     lst_explor = lst_tetri;
-    while (lst_tetri != NULL)
+    while (lst_explor != NULL)
     {
-        printf("Coord relatives tetri #%de tetri :\n", i);
+        printf("1/ Coord relatives tetri #%de tetri :\n", i);
         printf("1er bloc [%d][%d]\n", lst_explor->point[0].x, lst_explor->point[0].y);
         printf("2e bloc  [%d][%d]\n", lst_explor->point[1].x, lst_explor->point[1].y);
         printf("3e bloc  [%d][%d]\n", lst_explor->point[2].x, lst_explor->point[2].y);
@@ -39,16 +39,17 @@ int     main(void)
         lst_explor = lst_explor->next;
         i++;
     }
-    ft_check3(lst_tetri);
     lst_explor = lst_tetri;
+    ft_check3(lst_tetri);
+    i = 1;
     while (lst_explor != NULL)
     {
-        printf("Coord relatives explor #%de explor :\n", i);
+        printf("2/ Coord relatives explor #%de explor :\n", i);
         printf("1er bloc [%d][%d]\n", lst_explor->point[0].x, lst_explor->point[0].y);
         printf("2e bloc  [%d][%d]\n", lst_explor->point[1].x, lst_explor->point[1].y);
         printf("3e bloc  [%d][%d]\n", lst_explor->point[2].x, lst_explor->point[2].y);
         printf("4e bloc  [%d][%d]\n", lst_explor->point[3].x, lst_explor->point[3].y);
-        lst_tetri = lst_tetri->next;
+        lst_explor = lst_explor->next;
         i++;
     }
     return (0);

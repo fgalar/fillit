@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 07:53:26 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/10 12:01:00 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/10 12:23:21 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void    ft_apply_trsl(t_tetri *piece, int *trsl_x, int *trsl_y)
     j = -1;
     while (++i < 4)
     {
-        piece->point[i].x = piece->point[i].x + *trsl_x;
-        piece->point[i].y = piece->point[i].y + *trsl_y;
+        piece->point[i].x = piece->point[i].x - *trsl_x;
+        piece->point[i].y = piece->point[i].y - *trsl_y;
     }
 }
 
