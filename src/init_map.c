@@ -6,58 +6,70 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 03:54:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/08 22:33:50 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/10 23:42:54 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 #include "../libft/libft.h"
 #include "../include/fillit.h"
 
-int		map_min(char c)
+int		map_min(int size)
 {
 	int		i;
-	int		nb_piece;
 
 	i = 1;
-	nb_piece = c - 'A';
-	while (i * i < nb_piece)
-	{
+	size *= 4;
+	while (i * i < size)
 		i++;
-		ft_putnbr(i);
-		ft_putchar('\n');
-	}
 	return (i);	
 }
 
-t_mappy	*init_map(t_mappy *map, char c)
+char	**mapper(int size)
 {
 	int		i;
 	int		j;
+	char	**map;
 
 	j = 0;
-	map->size = map_min(c);
-	while (j < map->size)
+		
+	if (!(map = (char**)malloc(sizeof(char*) * (size + 1))))
+		return (NULL);
+	map[size] = 0;
+	while (j < size)
 	{
+		if (!(map[j] = (char*)malloc(sizeof(char) * (size + 1))))
+			return (NULL);
+		map[j][size] = '\0';
 		i = 0;
-		while (i < map->size)
-			map->map[j][i++] = '.';
+		while (i < size)
+		{	
+			map[j][i] = '.';
+			i++;
+		}
 		j++;
 	}
-	return (map->map);
+	return (map);
 }
-
+/*
+#include <stdlib.h>
+#include <stdio.h>
 int	main(void)
 {
 	t_mappy	*map;
-	int	y;
+	int		y;
+	int		x;
 	int     max;
 
 	y = 0;
-	max = map_min('E');
-	map = init_map(map, 'E');
+	x = 0;
+	map = (t_mappy*)malloc(sizeof(t_mappy));
+	max = map_min(26);
+	map = mapper(map, max);
 	while (y < max)
 	{
-		ft_putstr(*map[y]);
+		ft_putstr(map->map[y]);
+		ft_putchar('\n');
 		y++;
 	}
 	return (0);
-}
+}*/

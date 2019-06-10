@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/07 02:52:20 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/10 21:28:16 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_tetri	*lstadd(char *buffer, t_tetri *element, char c)
 	return (start);
 }
 
-t_tetri		*ft_parsing(char **av)
+t_tetri		*ft_parsing(char *av)
 {
 	int		fd;
 	int		ret;
@@ -75,42 +75,16 @@ t_tetri		*ft_parsing(char **av)
 	char	buffer[21];
 	char	c;
 
-	fd = open(av[1], O_RDONLY);
+	fd = open(av, O_RDONLY);
 	ret = 0;
 	lst_tetri = NULL;
 	c = 'A';
-	while ((ret = read(fd, buffer, 21)) > 0)
+	while ((ret = read(fd, buffer, 21)))
 	{
 		buffer[ret] = '\0';
 		if ((lst_tetri = lstadd(buffer, lst_tetri, c)) == NULL)
 			return (NULL);
 		c++;
 	}
-	//ft_map(lst_tetri);
-	
-	int i = 0;
-	while (lst_tetri != NULL) {
-		i=0;
-		while(i < 4) {
-			ft_putnbr(lst_tetri->point[i].x);
-			ft_putchar('|');
-			ft_putnbr(lst_tetri->point[i].y);
-			ft_putchar('\n');
-			i++;
-		}
-			ft_putchar('\n');
-		lst_tetri = lst_tetri->next;
-	}
-/*	char	**tab;
-	int		i;
-
-	i = 0;
-	if (!(tab = ft_tab(lst_tetri, c)))
-		return (NULL);
-	while (tab[i])
-	{
-		ft_putstr(tab[i]);
-		i++;
-	}*/
 	return (lst_tetri);
 }
