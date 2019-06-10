@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:42:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/06 22:53:11 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/10 12:01:02 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 typedef struct		s_point
 {
-	int		y;
 	int		x;
+	int		y;
 }					t_point;
 
 typedef struct      s_list
@@ -32,6 +32,9 @@ t_tetri		*lstadd(char *buffer, t_tetri *element, char c);
 t_tetri		*ft_parsing(char **av);
 int    		check_form(char *buffer);
 
+void    	ft_find_trsl(t_tetri *piece, int *trsl_x, int *trsl_y);
+void    	ft_apply_trsl(t_tetri *piece, int *trsl_x, int *trsl_y);
+void		ft_check3(t_tetri *tetri);
 void		ft_backtrack(char **solution, t_tetri *lst_tetri, int nb_tetrimino);
 int			ft_sqrt(unsigned int nb);
 void		ft_prt_solution(char **solution);

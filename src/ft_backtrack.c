@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 14:02:38 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/06 22:53:11 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/10 12:01:32 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "../libft/libft.h"
 
 /* FONCTION : SQRT
- * PARAMETRE(S) : 
+ * PARAMETRE(S) : unsigned int nb |l'entier dont la racine est à déterminer|
  * DESCRIPTION : 
- *     >
+ *     Retourne la racine entière inférieure ou égale à l'entier passé en paramètre.
  * RETOUR :
- *     >
+ *     la racine carrée calculée.
  */
 int     ft_sqrt(unsigned int nb)
 {
