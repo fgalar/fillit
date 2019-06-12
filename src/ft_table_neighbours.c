@@ -6,11 +6,11 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:22:35 by mdavid            #+#    #+#             */
-/*   Updated: 2019/05/22 18:20:36 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/12 17:41:24 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fillit.h"
+#include "../include/fillit.h"
 #include <stdio.h>
 
 /* FONCTION : FT_BLOCS_UPDOWN

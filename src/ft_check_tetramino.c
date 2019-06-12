@@ -6,11 +6,11 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:04:09 by mdavid            #+#    #+#             */
-/*   Updated: 2019/05/23 11:06:25 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/12 17:50:35 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fillit.h"
+#include "../include/fillit.h"
 
 /* FONCTION : CHECK_TETRAMINO
  * PARAMETRE(S) : buffer depuis la fonction CHECK. 

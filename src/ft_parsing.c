@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/06 14:10:27 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/12 17:17:51 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ t_tetri		*ft_parsing(char **av)
 	{
 		buffer[ret] = '\0';
 		if ((lst_tetri = lstadd(buffer, lst_tetri, c)) == NULL)
-			return (-1);
+			return (NULL);
 		c++;
 	}
 	return (lst_tetri);

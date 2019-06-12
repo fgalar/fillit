@@ -6,11 +6,11 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:05:43 by mdavid            #+#    #+#             */
-/*   Updated: 2019/05/23 11:05:46 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/12 17:41:08 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fillit.h"
+#include "../include/fillit.h"
 #include <stdio.h>
 
 /* FONCTION : FT_NB_BLOCS

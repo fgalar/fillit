@@ -6,13 +6,14 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 18:37:00 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/06 14:11:34 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/12 18:47:51 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fillit.h"
-#include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include "../include/fillit.h"
 
 /* FONCTION : CHECK
  * PARAMETRE(S) : int fd     |le file descriptor du fichier contenant les tetraminos|
@@ -36,24 +37,24 @@ int     ft_check(int *fd)
         return (-1);
     while (ret != 0 && nb_tetramino < 26)
     {
-        //printf("ici ft_check 1\n");
-        if ((ret = read(*fd, buffer, 19)) != 19)
+        printf("    ici ft_check 1\n");
+        if ((ret = read(*fd, buffer, 20)) != 20)
         {
-            //printf("ici ft_check 2-- ret = %d\n", ret);
+            printf("    ici ft_check 2-- ret = %d\n", ret);
             return (-1);
         }
-        //printf("ici ft_check 3\n");
+        printf("    ici ft_check 3\n");
         buffer[20] = '\0';
-        //printf("ici ft_check 4\n");
+        printf("    ici ft_check 4\n");
         if (ft_check_form(buffer) == 1)
         {
-            //printf("ici ft_check 5-- if test_form\n");
+            printf("    ici ft_check 5-- if test_form\n");
             return (1);
         }
-        //printf("ici ft_check 5\n");
+        printf("    ici ft_check 6\n");
         if (ft_check_tetramino(&buffer) == 1)
             return (1);
-        //printf("ici ft_check 6\n");
+        printf("    ici ft_check 6\n");
         if ((ret = read(*fd, buf_n, 1)) == 1)
             if (buf_n[0] != '\n')
                 return (1);
