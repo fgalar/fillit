@@ -6,7 +6,7 @@
 #    By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 15:29:33 by mdavid            #+#    #+#              #
-#    Updated: 2019/05/20 16:25:15 by fgarault         ###   ########.fr        #
+#    Updated: 2019/06/12 18:37:30 by fgarault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,10 @@ NAME = fillit
 
 LIBFT = -L./libft/ -lft -I./libft/
 
-SRC_NAME =	ft_parse.c	\
+SRC_NAME = ft_check.c ft_check_form.c ft_check_nb_blocs.c	    \
+		   ft_check_tetramino.c ft_display.c ft_parsing.c		\
+		   ft_solve.c ft_table_int.c ft_table_neighbours.c		\
+		   init_map.c main.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = fillit.h
@@ -49,7 +52,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@printf "\e[0K"
 
 norme :
-	 norminette -R CheckForbiddenSourceHeader $(SRC) $(INCLUDE)
+	 norminette $(SRC) $(INCLUDE)
 
 clean :
 	rm -rf $(OBJ_PATH)
