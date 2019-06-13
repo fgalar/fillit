@@ -6,12 +6,11 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:50:34 by fgarault          #+#    #+#             */
-/*   Updated: 2019/05/29 12:28:40 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/13 15:32:13 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
 #include "../include/fillit.h"
 
@@ -27,7 +26,7 @@
  *    0 -> le buffer reçu a la forme d'un potentiel tetramino.
  */
 
-int    check_form(char *buffer)
+int    ft_check_form(char *buffer)
 {
 	int         i;
 	int         error;
@@ -36,7 +35,7 @@ int    check_form(char *buffer)
 	i = 0;
 	error = 0;
 	mod = 0;
-	while (buffer[i] && i < 20 && error == 0)
+	while (buffer[i] && i < 19 && error == 0)
 	{
 		if ((i == 0) || ((mod = (i + 1) % 5) > 0))
 		{
@@ -50,7 +49,7 @@ int    check_form(char *buffer)
 		else
 			error = 1;
 	}
-	if (buffer[20] != '\n' && buffer[20] != '\0')
+	if (!(buffer[19] == '\n' || buffer[19] == '\0'))
 		error = 1;
 	return (error);
 }
