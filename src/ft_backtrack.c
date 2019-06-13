@@ -6,11 +6,13 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 14:02:38 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/12 18:06:19 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/13 18:41:28 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
+#include "../include/tools_debug.h"
 #include "../include/fillit.h"
 #include "../libft/libft.h"
 
@@ -40,23 +42,27 @@ int     ft_sqrt(int nb)
  * RETOUR :
  *     rien.
  */
-void    fill_with_point(char ***grid)
+void    fill_with_point(char **grid, int size)
 {
     int     i;
     int     j;
 
     i = 0;
-    j = 0;
-    while (*grid[i])
+    printf("    ft_fill_with_point 1\n");
+    while (i < size)
     {
-        while (*grid[i][j])
+        j = 0;
+        printf("    ft_fill_with_point 2 --- [i=%d][j=%d]\n", i, j);
+        while (j < size)
         {
-            *grid[i][j] = '.';
+            (grid)[i][j] = '.';
+            printf("    ft_fill_with_point 3 --- *grid[i=%d][j=%d] = ", i, j);
+            printf("*grid[i][j]=%c\n", (grid)[i][j]);
             j++;
         }
         i++;
     }
-
+printf("    ft_fill_with_point 4\n");
 }
 
 /* FONCTION : GRID
@@ -75,11 +81,15 @@ char    **ft_grid(int size)
     int     i;
 
     i = 0;
-    if (!(grid = (char**)ft_memalloc(size + 1)))
+    //printf("    ft_grid size = %d\n", size);
+    printf("    ft_grid 1\n");
+    if (!(grid = (char**)malloc(sizeof(char*) * (size + 1))))
         return (NULL);
+    printf("    ft_grid 2\n");
+    grid[size] = "\0";
     while (i < size)
     {
-        if (!(grid[i] = (char*)ft_memalloc(size + 1)))
+        if (!(grid[i] = (char*)malloc(sizeof(char) * (size + 1))))
         {
             i++;
             while (--i >= 0)
@@ -90,8 +100,16 @@ char    **ft_grid(int size)
         grid[i][size] = '\0';
         i++;
     }
-    grid[size] = "\0";
-    fill_with_point(&grid);
+    i = 0;
+    while (grid[i])
+    {
+        printf("    grid[i=%d]=|%s|\n", i, grid[i]);
+        i++;
+    }
+    printf("    ft_grid 3\n");
+    fill_with_point(grid, size);
+    printf("    ft_grid 4\n");
+    
     return (grid);
 }
 
@@ -214,12 +232,18 @@ char    **ft_backtrack(t_tetri *lst_tetri, int nb_tetri)
     int     stop;
 
     stop = 0;
+    //ft_print_all_tetra(lst_tetri);
     ft_check3(lst_tetri);
+    //ft_print_all_tetra(lst_tetri);
     extra_size = 0;
     while (stop == 0)
     {
         size = ft_sqrt(nb_tetri * 4) + extra_size;
+        printf("valeur de size = %d\n", size);
+        printf("    ft_backtrack 3\n");
         grid = ft_grid(size);
+        ft_print_grid(grid);
+        printf("    ft_backtrack 4\n");
         if ((stop = ft_put_all_tetra(lst_tetri, &grid, size)) == 0)
         {
             ft_free_grid(&grid);

@@ -6,12 +6,11 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:50:34 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/12 18:22:01 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/13 15:32:13 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
 #include "../include/fillit.h"
 

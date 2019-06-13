@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:04:09 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/12 17:50:35 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/13 15:33:24 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int    ft_check_tetramino(char **buffer)
     int     error;
 
     error = ft_check_nb_blocs(*buffer);
-    table_voisin = ft_table_int(4, 4);
+    table_voisin = ft_table_int(5, 5);
     sum_nghbr = ft_table_neighbours(table_voisin, *buffer);
     if (sum_nghbr != 6 && sum_nghbr != 8)
     {

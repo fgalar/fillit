@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:42:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/12 18:02:22 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/13 18:41:26 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ typedef struct      s_tetri
 	struct s_tetri	*next;
 }					t_tetri;
 
+typedef struct		s_rainbow
+{
+	char 	**color;
+}					t_rainbow;
+
 int    		ft_check_form(char *buffer);
 void    	ft_table_int_init(int **table, int nb_l, int nb_c);
 int     	**ft_table_int(int nb_l, int nb_c);
@@ -42,7 +47,7 @@ void    	ft_find_trsl(t_tetri *piece, int *trsl_x, int *trsl_y);
 void    	ft_apply_trsl(t_tetri *piece, int *trsl_x, int *trsl_y);
 void		ft_check3(t_tetri *tetri);
 int     	ft_sqrt(int nb);
-void    	fill_with_point(char ***grid);
+void    	fill_with_point(char **grid, int size);
 char    	**ft_grid(int size);
 int			ft_offset_tetra(t_tetri *tetri, char **grid, int *dx, int *dy);
 void    	ft_place_1tetra(t_tetri *tetri, char ***grid, int dx, int dy);

@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 19:11:15 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/12 18:10:26 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/13 18:41:29 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,14 @@ int     main(int ac, char **av)
         ft_putendl("error");
         return (-1);
     }
-    printf("ici 1\n");
     nb_tetri = ft_check(&fd);
     printf("valeur de nb_tetri=%d\n", nb_tetri);
-    printf("ici 2\n");
     close(fd);
     //fd = open(av[1], O_RDONLY);
     if (nb_tetri > 0)
     {
         //t_tetri = ft_parsing(fd);
-        printf("ici 3\n");
         lst_tetri = ft_parsing(av);
-        printf("ici 4\n");
     }
     printf("ici 5\n");
     solution = ft_backtrack(lst_tetri, nb_tetri);

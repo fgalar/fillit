@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:38:26 by mdavid            #+#    #+#             */
-/*   Updated: 2019/05/22 14:14:32 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/13 15:33:36 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int     **ft_table_int(int nb_l, int nb_c)
         if (!(table[i] = (int*)malloc(sizeof(int) * nb_c)))
         {
             while (--i >= 0)
-                free (table[i]);
-            free (table);
+                free(table[i]);
+            free(table);
             return (NULL);
         }
         i++;

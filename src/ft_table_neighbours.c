@@ -6,12 +6,11 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 14:22:35 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/12 17:41:24 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/13 15:30:53 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
-#include <stdio.h>
 
 /* FONCTION : FT_BLOCS_UPDOWN
  * PARAMETRES : char *buffer (le possible tetramino), int i (la position du bloc).
@@ -81,7 +80,6 @@ int     ft_table_neighbours(int **table, char *buffer)
     int     sum_nghbr;
     int     i;
 
-    sum_nghbr = 0;
     i = 0;
     while (buffer[i] && i < 19)
     {
@@ -92,6 +90,7 @@ int     ft_table_neighbours(int **table, char *buffer)
         i++;
     }
     i = 0;
+    sum_nghbr = 0;
     while (i < 19)
     {
         sum_nghbr = sum_nghbr + table[i / 5][i % 5];
