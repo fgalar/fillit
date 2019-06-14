@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/12 18:17:35 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/14 16:19:36 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,13 @@ t_tetri	*ft_parsing(char *av)
 	{
 		buffer[ret] = '\0';
 		if ((lst_tetri = lstadd(buffer, lst_tetri, c)) == NULL)
+		{
+			while (lst_tetri->next != NULL)
+				free(lst_tetri);
 			return (NULL);
+		}
 		c++;
 	}
+	close(fd);
 	return (lst_tetri);
 }
