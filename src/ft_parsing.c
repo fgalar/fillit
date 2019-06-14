@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/12 18:17:35 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/14 11:26:02 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ t_tetri	*ft_parsing(char *av)
 			return (NULL);
 		c++;
 	}
+	close(fd);
 	return (lst_tetri);
 }
