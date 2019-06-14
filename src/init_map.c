@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 03:54:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/13 20:49:37 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/14 13:35:35 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "../libft/libft.h"
 #include "../include/fillit.h"
 
-void    ft_free_grid(char **grid)
+void	ft_free_grid(char **grid)
 {
-	int     i;
+	int		i;
 
 	i = 0;
 	if (grid)

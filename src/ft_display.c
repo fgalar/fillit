@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 21:30:55 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/14 13:14:02 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/14 13:43:52 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	ft_display(t_mappy map)
 	}
 }
 
-void    ft_display_unicorn(t_mappy map)
+void	ft_display_unicorn(t_mappy map)
 {
-	int		j;
-	int		i;
-	char	c;
-	static char	*unicorn[27] = {POINT, A, B, C, D, E, F, G, H, I, J, K, L, M,
+	int			j;
+	int			i;
+	char		c;
+	static char	*rbw[27] = {POINT, A, B, C, D, E, F, G, H, I, J, K, L, M,
 		N, O, P, Q, R, S, T, U, V, W, X, Y, Z};
 
 	j = 0;
@@ -43,10 +43,10 @@ void    ft_display_unicorn(t_mappy map)
 		i = -1;
 		while (++i < map.size_map)
 		{
-			c ='A';
+			c = 'A';
 			while (map.map[j][i] != c && map.map[j][i] != '.')
 				c++;
-			map.map[j][i] == '.' ? ft_putstr(unicorn[0]) : ft_putstr(unicorn[c - 64]);
+			map.map[j][i] == '.' ? ft_putstr(rbw[0]) : ft_putstr(rbw[c - 64]);
 		}
 		ft_putchar('\n');
 		j++;
