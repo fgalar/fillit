@@ -6,7 +6,7 @@
 /*   By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:42:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/13 20:54:28 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/14 16:25:47 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,6 @@ int		map_min(int	size);
 char	**mapper(int size);
 int		bck_trck(t_tetri *lst_tetri, t_mappy map);
 void	ft_display(t_mappy map);
+void	ft_free_grid(t_mappy *grid);
+void    ft_display_unicorn(t_mappy map);
 #endif

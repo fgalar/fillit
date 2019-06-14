@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 03:54:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/14 13:35:35 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/14 16:25:20 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include "../libft/libft.h"
 #include "../include/fillit.h"
 
-void	ft_free_grid(char **grid)
+void	ft_free_grid(t_mappy *grid)
 {
 	int		i;
 
 	i = 0;
 	if (grid)
 	{
-		while (grid[i])
+		while (grid->map[i])
 		{
-			free(grid[i]);
+			free(grid->map[i]);
 			i++;
 		}
-		free(grid);
+		free((void*)grid->map);
 		grid = NULL;
 	}
 }
