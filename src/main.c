@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 19:11:15 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/14 16:29:55 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/15 17:08:05 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ int			main(int ac, char **av)
 		(map.size_map)++;
 	bool_c == 1 ? ft_display(map) : ft_display_unicorn(map);
 	ft_free_grid(&map);
+	ft_free_chain(lst_tetri);
 	return (0);
 }

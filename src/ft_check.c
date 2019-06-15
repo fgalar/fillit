@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 18:37:00 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/15 14:19:51 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/15 16:44:55 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int     ft_check(int *fd)
                 return (-1);
         nb_tetramino++;
     }
+	free(buffer);
     return (nb_tetramino);
 }
