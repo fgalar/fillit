@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 19:11:15 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/15 17:54:13 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/15 18:19:56 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int			main(int ac, char **av)
 	bool_c = 0;
 	if (ac != 2)
 		ft_error(1);
-	if ((nb_tetri = ft_check(&fd)) == -1) 
+	if ((nb_tetri = ft_check(&fd)) == -1 || fd == -1) 
 		ft_error(2);
 	if ((lst_tetri = ft_parsing(av[1])) == NULL)
 		ft_error(2);
