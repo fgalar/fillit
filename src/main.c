@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 19:11:15 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/15 17:08:05 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/15 17:54:13 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			main(int ac, char **av)
 	int		bool_c;
 
 	fd = open(av[1], O_RDONLY);
-	bool_c = 1;
+	bool_c = 0;
 	if (ac != 2)
 		ft_error(1);
 	if ((nb_tetri = ft_check(&fd)) == -1) 
