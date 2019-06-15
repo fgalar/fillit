@@ -6,7 +6,7 @@
 /*   By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:42:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/14 16:25:47 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/15 14:07:34 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int     ft_check(int *fd);
 int    	ft_check_form(char *buffer);
 int     ft_check_nb_blocs(char *buffer);
 int    	ft_check_tetramino(char **buffer);
+void	ft_free_tabint(int **table, int nb_l);
 void    ft_table_int_init(int **table, int nb_l, int nb_c);
 int     **ft_table_int(int nb_l, int nb_c);
 int     ft_blocs_updown(char *buffer, int i);

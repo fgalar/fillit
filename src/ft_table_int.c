@@ -6,12 +6,34 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:38:26 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/13 15:33:36 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/15 14:06:03 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include <stdlib.h>
+
+/* FONCTION : FT_FREE_TABINT
+ * PARAMETRES : table (tableau de int), nb_l (nb de ligne).
+ * DESCRIPTION :
+ * 		free le tableau passé en argument et ayant nb_l lignes.
+ * 	RETOUR :
+ * 		rien.
+ */
+void	ft_free_tabint(int **table, int nb_l)
+{
+	if (table)
+	{
+		while (nb_l > 0)
+		{
+			free (table[nb_l - 1]);
+			nb_l--;
+		}
+		free((void*)table);
+		table = NULL;
+	}
+}
+
 
 /* FONCTION : FT_TABLE_INT_INIT.
  * PARAMETRES : table (tableau de int), nb_l (nb line de table), nb_c (nb column de table).
