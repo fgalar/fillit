@@ -6,7 +6,7 @@
 #    By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 15:29:33 by mdavid            #+#    #+#              #
-#    Updated: 2019/06/14 16:35:48 by mdavid           ###   ########.fr        #
+#    Updated: 2019/06/15 17:14:58 by fgarault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
 INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
 
 $(LIBFT):
 	@make -C libft
@@ -59,7 +59,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@$(CC) $(CFLAGS) -I./$(INC_PATH) -c $< -o $@
 	@printf "\e[0K"
 
-$(NAME) : $(OBJ)
+$(NAME) : $(LIBFT) $(OBJ)
 	@echo "\033[1;32m[$(CC)] - [$(CFLAGS)]\033[0m \033[1;33m- generating executable - :\033[0m $@"
 	@echo "\033[1;31m--->\033[0m $(CC) $(CFLAGS) $(OBJ) $(LIBFT_L) -I$(INC_PATH) -o $(NAME)"
 	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT_L) -I$(INC_PATH) -o $(NAME)

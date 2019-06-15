@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 18:37:00 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/15 17:50:15 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/15 18:45:51 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int     ft_check(int *fd)
     if (read(*fd, buf_n, 0) == -1 || !(buffer = (char*)malloc(sizeof(char) * 21)))
         return (-1);
     buffer[20] = '\0';
-    while (ret != 0 && nb_tetramino < 26)
+    while (ret != 0 && nb_tetramino <= 26)
     {
 		if ((ret = read(*fd, buffer, 20)) != 20 || ft_check_form(buffer) == 1
 				|| ft_check_tetramino(&buffer) == 1)
@@ -50,5 +50,5 @@ int     ft_check(int *fd)
         nb_tetramino++;
     }
 	free(buffer);
-    return (nb_tetramino == 0 ? -1 : nb_tetramino);
+    return (nb_tetramino == 0 || nb_tetramino > 26 ? -1 : nb_tetramino);
 }
