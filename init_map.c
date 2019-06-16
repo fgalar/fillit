@@ -6,13 +6,13 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 03:54:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/16 15:00:52 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 18:19:37 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../libft/libft.h"
-#include "../include/fillit.h"
+#include "libft/libft.h"
+#include "fillit.h"
 
 void	ft_free_grid(t_mappy *grid)
 {
