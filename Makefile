@@ -6,7 +6,7 @@
 #    By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 15:29:33 by mdavid            #+#    #+#              #
-#    Updated: 2019/06/15 17:14:58 by fgarault         ###   ########.fr        #
+#    Updated: 2019/06/16 14:11:46 by mdavid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
 all: $(NAME)
 
 $(LIBFT):
+	@echo "\033[1;31m[LIBFT RULE]\033[0m \033[1;33mcompilation libft\033[0m"
 	@make -C libft
 	
 ### Permet de creer les objets en remplaçant la ligne de creation de l'objet au fur et à mesure
@@ -70,11 +71,13 @@ norme :
 clean :
 	@echo "\033[1;31m[CLEAN RULE]\033[0m \033[1;33mdeleting objects directory\033[0m"
 	@rm -rf $(OBJ_PATH)
+	@echo "\033[1;31m[LIBFT CLEAN RULE]\033[0m \033[1;33mdeleting libft objects\033[0m"
 	@make -C libft/ clean
 
 fclean : clean
 	@echo "\033[1;31m[FCLEAN RULE]\033[0m \033[1;33mdeleting fillit executable\033[0m"
 	@rm -rf $(NAME)
+	@echo "\033[1;31m[LIBFT FCLEAN RULE]\033[0m \033[1;33mdeleting libft objects and libft.a\033[0m"
 	@make -C libft/ fclean
 	
 re : fclean all
