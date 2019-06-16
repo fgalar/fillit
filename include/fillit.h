@@ -6,7 +6,7 @@
 /*   By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 20:42:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/15 17:08:43 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 17:27:34 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,11 @@ typedef struct		s_point
 	int		x;
 }					t_point;
 
-typedef struct      s_tetri
+typedef struct		s_tetri
 {
-	t_point 		point[4];
+	t_point			point[4];
 	char			c;
-
-	struct s_tetri  *next;
+	struct s_tetri	*next;
 }					t_tetri;
 
 typedef struct		s_mappy
@@ -60,25 +59,25 @@ typedef struct		s_mappy
 	int				size_map;
 }					t_mappy;
 
-int     ft_check(int *fd);
-int    	ft_check_form(char *buffer);
-int     ft_check_nb_blocs(char *buffer);
-int    	ft_check_tetramino(char **buffer);
-void	ft_free_tabint(int **table, int nb_l);
-void    ft_table_int_init(int **table, int nb_l, int nb_c);
-int     **ft_table_int(int nb_l, int nb_c);
-int     ft_blocs_updown(char *buffer, int i);
-int     ft_blocs_leftright(char *buffer, int i);
-int     ft_table_neighbours(int **table, char *buffer);
-void	ft_set_point(char *buffer, t_tetri *new_element);
-t_tetri	*lstadd(char *buffer, t_tetri *element, char c);
-t_tetri	*ft_parsing(char *av);
-int		map_min(int	size);
-char	**mapper(int size);
-int		bck_trck(t_tetri *lst_tetri, t_mappy map);
-void	ft_display(t_mappy map);
-void	ft_free_grid(t_mappy *grid);
-void    ft_display_unicorn(t_mappy map);
-void	ft_free_chain(t_tetri *lst);
+int					ft_check(int *fd);
+int					ft_check_form(char *buffer);
+int					ft_check_nb_blocs(char *buffer);
+int					ft_check_tetramino(char **buffer);
+void				ft_free_tabint(int **table, int nb_l);
+void				ft_table_int_init(int **table, int nb_l, int nb_c);
+int					**ft_table_int(int nb_l, int nb_c);
+int					ft_blocs_updown(char *buffer, int i);
+int					ft_blocs_leftright(char *buffer, int i);
+int					ft_table_neighbours(int **table, char *buffer);
+void				ft_set_point(char *buffer, t_tetri *new_element);
+t_tetri				*lstadd(char *buffer, t_tetri *element, char c);
+t_tetri				*ft_parsing(char *av);
+int					map_min(int	size);
+char				**mapper(int size);
+int					bck_trck(t_tetri *lst_tetri, t_mappy map);
+void				ft_display(t_mappy map);
+void				ft_free_grid(t_mappy *grid);
+void				ft_display_unicorn(t_mappy map);
+void				ft_free_chain(t_tetri *lst);
 
 #endif
