@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   ft_solve.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/15 17:10:15 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 14:09:08 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ t_tetri	*ft_parsing(char *av)
 		if ((lst_tetri = lstadd(buffer, lst_tetri, c)) == NULL)
 		{
 			ft_free_chain(lst_tetri);
-			return(NULL);
+			return (NULL);
 		}
 		c++;
 	}

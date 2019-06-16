@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 03:54:07 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/15 17:08:07 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 15:00:52 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_free_grid(t_mappy *grid)
 void	ft_free_chain(t_tetri *lst)
 {
 	t_tetri *tmp;
-	
+
 	tmp = lst;
 	while (tmp != NULL)
 	{
@@ -43,6 +43,7 @@ void	ft_free_chain(t_tetri *lst)
 		lst = tmp;
 	}
 }
+
 int		map_min(int size)
 {
 	int		i;

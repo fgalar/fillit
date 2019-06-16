@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/02 19:11:15 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/15 18:19:56 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 14:56:36 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_error(int option)
 	}
 }
 
-int			main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	int		fd;
 	int		nb_tetri;
@@ -43,13 +43,11 @@ int			main(int ac, char **av)
 	bool_c = 0;
 	if (ac != 2)
 		ft_error(1);
-	if ((nb_tetri = ft_check(&fd)) == -1 || fd == -1) 
-		ft_error(2);
-	if ((lst_tetri = ft_parsing(av[1])) == NULL)
+	if ((nb_tetri = ft_check(&fd)) == -1 || fd == -1
+			|| !(lst_tetri = ft_parsing(av[1])
+			|| !(map.map = mapper(26))))
 		ft_error(2);
 	map.size_map = map_min(nb_tetri);
-	if (!(map.map = mapper(26)))
-		ft_error(2);
 	while (!(bck_trck(lst_tetri, map)))
 		(map.size_map)++;
 	bool_c == 1 ? ft_display(map) : ft_display_unicorn(map);
