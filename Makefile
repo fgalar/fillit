@@ -6,7 +6,7 @@
 #    By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 15:29:33 by mdavid            #+#    #+#              #
-#    Updated: 2019/06/16 16:28:05 by mdavid           ###   ########.fr        #
+#    Updated: 2019/06/16 17:57:16 by fgarault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,9 +52,9 @@ $(LIBFT_PATH)/%.c:
 
 $(LIBFT): $(LIBFT_PATH)/%.c
 	
-### Permet de creer les objets en remplaçant la ligne de creation de l'objet au fur et à mesure
-##	printf "\e[1A"
-##	printf "\e[0K"
+## Permet de creer les objets en remplaçant la ligne de creation de l'objet au fur et à mesure
+## printf "\e[1A"
+## printf "\e[0K"
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir -p $(dir $(OBJ_PATH)/$*)
 	@echo "\033[1;32m[$(CC)] - [$(CFLAGS)]\033[0m \033[1;33min progress ...:\033[0m $< \033[1;31m->\033[0m $@"

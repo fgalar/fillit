@@ -6,7 +6,7 @@
 #    By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/07 17:50:20 by fgarault          #+#    #+#              #
-#    Updated: 2019/06/16 16:28:08 by mdavid           ###   ########.fr        #
+#    Updated: 2019/06/16 17:52:29 by fgarault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ norme :
 clean :
 	rm -rf $(OBJS)
 
-fclean :
+fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
