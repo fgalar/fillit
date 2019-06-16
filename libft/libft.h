@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 18:19:35 by fgarault          #+#    #+#             */
-/*   Updated: 2019/04/27 18:12:51 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 21:16:30 by fgarault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,4 @@ void				ft_print_tab_int(int *tab, int size);
 int					*ft_sort_integer(int *tab, int size);
 int					ft_power(int nb, int power);
 
-/*  
- *  DEFINITION DE FONCTIONS SUPPLEMENTAIRES
- */
- int				ft(size_t i, size_t div);
 #endif
