@@ -6,7 +6,7 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:50:34 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/13 15:32:13 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/16 12:24:02 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 #include <unistd.h>
 #include "../include/fillit.h"
 
-/* FONCTION : CHECK_FORM
- * PARAMETRE(S) : adresse d'une string. 
- * DESCRIPTION :
- *    Reçoit le buffer depuis la fonction CHECK()
- *    Permet de vérifier si le buffer a les caractéristiques d'un tetramino potentiel
- *    en vérifiant que l'on a 4 caracteres ('#'||'.') suivi d'un \n pour les trois 1eres
- *    lignes et d'un '\n'||'\0' pour la derniere ligne.
- * RETOUR :
- *    1 -> le buffer reçu n'a pas la forme d'un potentiel tetramino.
- *    0 -> le buffer reçu a la forme d'un potentiel tetramino.
- */
+/*
+** FONCTION : CHECK_FORM
+** PARAMETRE(S) : adresse d'une string.
+** DESCRIPTION :
+**	 Reçoit le buffer depuis la fonction CHECK()
+**	 Permet de vérifier si le buffer a les caractéristiques d'un tetramino
+**	 potentiel en vérifiant que l'on a 4 caracteres ('#'||'.') suivi d'un \n
+**	 pour les trois 1eres lignes et d'un '\n'||'\0' pour la derniere ligne.
+** RETOUR :
+**		1 -> le buffer reçu n'a pas la forme d'un potentiel tetramino.
+**		0 -> le buffer reçu a la forme d'un potentiel tetramino.
+*/
 
-int    ft_check_form(char *buffer)
+int		ft_check_form(char *buffer)
 {
-	int         i;
-	int         error;
+	int			i;
+	int			error;
 	int			mod;
 
 	i = 0;
