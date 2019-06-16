@@ -6,7 +6,7 @@
 #    By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/07 17:50:20 by fgarault          #+#    #+#              #
-#    Updated: 2019/05/20 16:28:36 by fgarault         ###   ########.fr        #
+#    Updated: 2019/06/16 16:28:08 by mdavid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,10 +35,14 @@ INCLUDE = libft.h
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	ar rcs $(NAME) $^
+	@echo "\033[1;32m[ar rcs)]\033[0m \033[1;33mconstruction librairy\033[0m"
+	@ar rcs $(NAME) $^
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $(SRCS) -I $(INCLUDE)
+	@printf "\e[1A"
+	@echo "\033[1;32m[$(CC)] - [$(CFLAGS)]\033[0m \033[1;33min progress ...:\033[0m $< \033[1;31m->\033[0m $@"
+	@printf "\e[0K"
+	@$(CC) $(CFLAGS) -c $^ -I $(INCLUDE)
 
 norme :
 	 norminette -R CheckForbiddenSourceHeader $(SRCS) $(INCLUDE)
