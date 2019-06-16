@@ -6,7 +6,7 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:12:14 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/16 14:09:08 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 18:22:13 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <sys/uio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "../libft/libft.h"
-#include "../include/fillit.h"
+#include "libft/libft.h"
+#include "fillit.h"
 
 void	ft_set_point(char *buffer, t_tetri *new_element)
 {

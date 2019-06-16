@@ -6,13 +6,13 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 13:33:55 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/14 13:34:02 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 18:19:28 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../include/fillit.h"
-#include "../libft/libft.h"
+#include "fillit.h"
+#include "libft/libft.h"
 
 int		can_put(t_tetri *piece, t_mappy map, int i, int j)
 {

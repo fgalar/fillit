@@ -6,13 +6,13 @@
 /*   By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:50:34 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/16 12:24:02 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/16 18:20:37 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../include/fillit.h"
+#include "fillit.h"
 
 /*
 ** FONCTION : CHECK_FORM

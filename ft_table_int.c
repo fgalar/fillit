@@ -6,12 +6,12 @@
 /*   By: mdavid <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/16 12:33:17 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/16 12:37:11 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/16 18:21:17 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include <stdlib.h>
+#include "libft/libft.h"
 
 /*
 ** FONCTION : FT_FREE_TABINT

@@ -6,13 +6,13 @@
 /*   By: mdavid <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/16 12:03:39 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/16 14:08:12 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/16 18:20:12 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "../include/fillit.h"
+#include "fillit.h"
 
 /*
 ** FONCTION : CHECK

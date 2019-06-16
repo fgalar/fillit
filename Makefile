@@ -6,7 +6,7 @@
 #    By: fgarault <fgarault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 15:29:33 by mdavid            #+#    #+#              #
-#    Updated: 2019/06/16 17:57:16 by fgarault         ###   ########.fr        #
+#    Updated: 2019/06/16 19:31:35 by mdavid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,33 +17,24 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = fillit
 
-LIBFT_L = -L./libft/ -lft -I./libft/
-
+LIBFT_L = -L./libft/ -lft -I/libft/
+LIBFT_PATH = ./libft
 LIBFT = ./libft/libft.a
 
-SRC_NAME =	ft_parsing.c			\
+SRC_NAME =	main.c					\
 			ft_check.c				\
+			ft_solve.c				\
+			init_map.c				\
+			ft_parsing.c			\
+			ft_display.c			\
+			ft_table_int.c			\
 			ft_check_form.c			\
 			ft_check_nb_blocs.c		\
 			ft_check_tetramino.c	\
-			ft_display.c			\
-			ft_solve.c				\
-			ft_table_int.c			\
-			ft_table_neighbours.c	\
-			init_map.c				\
-			main.c
+			ft_table_neighbours.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
-INC_NAME = fillit.h
-
-SRC_PATH = ./src
-OBJ_PATH = ./obj
-INC_PATH = ./include
-LIBFT_PATH = ./libft
-
-SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
-OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
-INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
+INCLUDE = -I fillit.h
 
 all: $(NAME)
 
@@ -52,27 +43,23 @@ $(LIBFT_PATH)/%.c:
 
 $(LIBFT): $(LIBFT_PATH)/%.c
 	
-## Permet de creer les objets en remplaçant la ligne de creation de l'objet au fur et à mesure
-## printf "\e[1A"
-## printf "\e[0K"
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
-	@mkdir -p $(dir $(OBJ_PATH)/$*)
-	@echo "\033[1;32m[$(CC)] - [$(CFLAGS)]\033[0m \033[1;33min progress ...:\033[0m $< \033[1;31m->\033[0m $@"
+%.o: %.c
 	@printf "\e[1A"
-	@$(CC) $(CFLAGS) -I./$(INC_PATH) -c $< -o $@
+	@echo "\033[1;32m[$(CC)] - [$(CFLAGS)]\033[0m \033[1;33min progress ...:\033[0m $< \033[1;31m->\033[0m $@"
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 	@printf "\e[0K"
 
-$(NAME) : $(LIBFT) $(OBJ)
+$(NAME) : $(LIBFT) $(OBJ_NAME)
 	@echo "\033[1;32m[$(CC)] - [$(CFLAGS)]\033[0m \033[1;33m- generating executable - :\033[0m $@"
-	@echo "\033[1;31m--->\033[0m $(CC) $(CFLAGS) $(OBJ) $(LIBFT_L) -I$(INC_PATH) -o $(NAME)"
-	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT_L) -I$(INC_PATH) -o $(NAME)
+	@echo "\033[1;31m--->\033[0m $(CC) $(CFLAGS) $(OBJ_NAME) $(LIBFT_L) $(INCLUDE) -o $(NAME)"
+	@$(CC) $(CFLAGS) $(OBJ_NAME) $(INCLUDE) $(LIBFT_L) -o $(NAME)
 
 norme :
-	 norminette -R CheckForbiddenSourceHeader $(SRC) $(INCLUDE)
+	 norminette -R CheckForbiddenSourceHeader $(SRC_NAME) $(INC_NAME)
 
 clean :
 	@echo "\033[1;31m[CLEAN RULE]\033[0m \033[1;33mdeleting objects directory\033[0m"
-	rm -rf $(OBJ_PATH)
+	rm -f $(OBJ_NAME)
 	@echo "\033[1;31m[LIBFT CLEAN RULE]\033[0m \033[1;33mdeleting libft objects\033[0m"
 	@make -C libft/ clean
 

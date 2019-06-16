@@ -6,11 +6,11 @@
 /*   By: mdavid <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/16 12:27:49 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/16 12:28:47 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/16 18:20:56 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 /*
 ** FONCTION : CHECK_TETRAMINO

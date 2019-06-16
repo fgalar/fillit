@@ -6,12 +6,12 @@
 /*   By: fgarault <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 21:30:55 by fgarault          #+#    #+#             */
-/*   Updated: 2019/06/14 13:43:52 by fgarault         ###   ########.fr       */
+/*   Updated: 2019/06/16 18:18:59 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
-#include "../libft/libft.h"
+#include "fillit.h"
+#include "libft/libft.h"
 
 void	ft_display(t_mappy map)
 {

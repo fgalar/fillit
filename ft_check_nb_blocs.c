@@ -6,11 +6,11 @@
 /*   By: mdavid <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/16 12:25:03 by mdavid            #+#    #+#             */
-/*   Updated: 2019/06/16 12:26:12 by mdavid           ###   ########.fr       */
+/*   Updated: 2019/06/16 18:20:45 by mdavid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fillit.h"
+#include "fillit.h"
 
 /*
 ** FONCTION : FT_NB_BLOCS
